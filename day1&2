@@ -1,0 +1,42 @@
+#program1
+Print a string
+
+print("hello world")
+
+#program2
+Write a program that prints a formatted message using escape characters. 
+
+name=input("enter name") 
+age=int(input("enter age"))
+branch=input("branch") 
+print(f"my name is {name},\n my age is {age},\ni am studing {branch}")
+
+  
+#program3
+Write a program to calculate the total cost of items including tax
+cost_of_items=int(input("enter cost per items:"))
+no_of_items=int(input("enter number of items:"))
+total_cost=cost_of_items*no_of_items
+print(f"total cost is {total_cost}")
+tax=float(input('enter tax:'))
+
+total_cost_including_tax = (total_cost+(total_cost*tax/100))
+
+print(f"total cost including tax is {total_cost_including_tax}")
+
+ #program4
+  Write a Program to calculate area of rectangle
+  length=int(input("enter the length of rectangle:"))
+breadth=float(input('enter the breadth of rectangle:'))
+Area_of_rectangle=length*breadth
+print(f"area of rectangle is {Area_of_rectangle}")
+
+#program5
+  Write a program to swap the variables 
+  a=16
+b=39
+a=a^b
+b=a^b
+a=a^b
+print(f'After swap ,the values of a and b is',a,b)
+  
