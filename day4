@@ -1,0 +1,16 @@
+#Write a program that takes a sentence as input and extracts the substring between the 5th and 10th characters (inclusive). Print the extracted substring.
+phobia=input("Enter a type of phobia:")
+print(phobia[5:9])
+
+#Write a program to check for alpha numeric characters
+er='extravergent'
+er.isalnum()
+
+#Write a program to find how many times abra has occurred in the string ‘abracadabracobra’
+hush='abracadabracobra'
+hush.count('abra')
+
+#Write a program to reverse a string
+str='starfish'
+for i in range(len(str)-1,-1,-1):
+  print(str[i])
