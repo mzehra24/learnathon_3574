@@ -1,0 +1,31 @@
+#Python Program to Find the Square Root
+num=int(input("enter a number"))
+sq=num**0.5
+print(sq)
+
+#Python Program to Find the Largest Among Three Numbers
+num1=int(input("enter 1st number:"))
+num2=int(input("enter 2nd number:"))
+num3=int(input("enter 3rd number:"))
+if(num1>num2 and num1>num3):
+  print("num1 is greatest")
+elif(num2>num1 and num2>num3):
+  print("num2 is greatest")
+elif(num3>num1 and num3>num2):
+  print("num3 is greatest")
+
+#Python Program to Solve Quadratic Equation
+import cmath
+a=int(input("enter a number"))
+b=int(input("enter a number"))
+c=int(input("enter a number"))
+d=b**2-4*a*c
+r1=-b+(d)/2*a
+r2=-b-(d)/2*a
+print(r1)
+print(r2)
+
+#Python Program to Convert Celsius To Fahrenheit
+celsius=int(input("enter a number"))
+fahrenheit=celsius*1.8+32
+print(fahrenheit)
