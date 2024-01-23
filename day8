@@ -1,0 +1,37 @@
+#Write a function called sum_numbers that takes two numbers as arguments and returns their sum.
+def add(a,b):
+  s=a+b
+  print(s)
+add(9,4)
+
+#Create a function called **`grade_converter`** that takes a numerical grade as an argument and returns the corresponding letter grade (A, B, C, D, F) based on the standard grading scale.
+#If the score is greater than or equal to 90, print "A"
+# If the score is between 80 and 89, print "B"
+#If the score is between 70 and 79, print "C"
+#If the score is between 50 and 69, print "D"
+#If the score is below 50, print "F"
+def grade_converter(score):
+  if score>=90:
+    print("A")
+  elif 80<score<90:
+    print("B")
+  elif 70<score<79:
+    print("C")
+  elif 50<score<69:
+    print("D")
+  else:
+    print("F")
+numerical_grade=grade_converter(75)
+print(numerical_grade)
+
+#Write a Python program that defines a function called outer_function. Inside outer_function, declare a variable x with a value of 10. Then, define another function called inner_function inside outer_function. Inside inner_function, declare a variable y with a value of 5. Return the sum of x and y from inner_function. Finally, call outer_function and print the result.
+def outer_function():
+    x = 10 
+    
+    def inner_function():
+        y = 5 
+        return x + y  
+    result = inner_function()
+    return result
+result_value = outer_function()
+print(f"Result: {result_value}")
