@@ -1,0 +1,27 @@
+#Write a recursive function to find the sum of digits of a positive integer.
+def sum(n):
+ if n==0:
+  return 0
+ else:
+  return n%10+sum(n//10)
+digits=123
+res=sum(digits)
+print(res)
+
+#Write a recursive function to reverse a string.
+def rev_str(s):
+  if len(s)==0:
+    return s
+  else:
+    return s[-1]+rev_str(s[:-1])
+str='mango'
+print('reverse of stringr is',rev_str(str))
+
+#How would you write a recursive function to calculate the power of a number (e.g., x^n)?
+def pr(x,n):
+  if n==0:
+    return 1
+  else:
+    return x*pr(x,n-1)
+power=pr(4,2)
+print(power)
