@@ -1,0 +1,38 @@
+#Write a Python program to add member(s) in a set
+fruits={'ice apple','pineapple'}
+veggies={'potato','onion'}
+fruits.update(veggies)
+print(fruits)
+
+#Write a Python program to remove item(s) from a given set
+fav_foods={'biryani','haleem','noodles','chicken 65','rolls'}
+fav_foods.discard('rolls')
+fav_foods.discard('noodles')
+print(fav_foods)
+
+#You are given two sets of integers, **`set_a`** and **`set_b`**. Implement a Python program that performs the following operations and prints the results:
+
+#1. Union: Find and print the union of **`set_a`** and **`set_b`**.
+#2. Intersection: Find and print the intersection of **`set_a`** and **`set_b`**.
+#3. Difference: Find and print the elements that are present in **`set_a`** but not in **`set_b`**.
+#4. Symmetric Difference: Find and print the elements that are present in either of the sets, but not in both.
+
+#1.
+set_a={1,2,3,4,5}
+set_b={5,6,7,8,9}
+print(set_a.union(set_b))
+
+#2.
+set_a={1,2,3,4,5}
+set_b={5,6,7,8,9}
+print(set_a.intersection(set_b))
+
+#3.
+set_a={1,2,3,4,5}
+set_b={5,6,7,8,9}
+print(set_a.difference(set_b))
+
+#4.
+set_a={1,2,3,4,5}
+set_b={5,6,7,8,9}
+print(set_a.symmetric_difference(set_b))
