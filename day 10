@@ -1,0 +1,17 @@
+#Write a Python program to get the largest number from a list
+lt=[18,23,43,21]
+max=lt[0]
+for i in lt:
+ if i>max:
+  max=i
+print(max)
+
+#Write a Python program to clone or copy a list
+l1=[1,7,3,4]
+l2=list(l1)
+print("old list is",l1)
+print("new list is",l2)
+
+#Write a Python program to find the repeated items of a tuple
+tup=('strawberry')
+print(tup.count('r'))
