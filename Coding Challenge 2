@@ -1,0 +1,31 @@
+#Python Program to Find the Factorial of a Number
+def fact(n):
+  if n==0:
+    return 1
+  else:
+    return n*fact(n-1)
+result=fact(5)
+print("factorial of 5 is",result)
+
+#Python Program to Print the Fibonacci sequence.
+def fib(n):
+ a=0
+ b=1
+ if n==1:
+  print(a)
+ else:
+  print(a)
+  print(b)
+ for i in range(2,n):
+  c=a+b
+  a=b
+  b=c
+  print(c)
+fib(8)
+
+#Python Program to Convert Decimal to Binary, Octal and Hexadecimal
+decimal=int(input("enter a number:"))
+print("The conversion of decimal number is:")
+print(bin(decimal),"in binary")
+print(oct(decimal),"in octal")
+print(hex(decimal),"in decimL")
