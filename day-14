@@ -1,0 +1,61 @@
+# Write a Python class called **`Rectangle`** with attributes **`length`** and **`width`**, and methods to calculate its area and perimeter.
+class rectangle:
+  def __init__(self,length,width):
+    self.length=length
+    self.width=width
+  def area(self):
+    return self.length*self.width
+  def peri(self):
+    return 2*(self.length+self.width)
+rec_a=rectangle(2,5)
+rec_a.area()
+rec_a.peri()
+
+#Create a Python class called Student with attributes name, age, and grades, and methods to add grades, calculate average grade, and display student information.
+  class student:
+  def __init__(self,name,age,grades=[]):
+    self.name=name
+    self.age=age
+    self.grades=grades
+  def add(self,grade):
+    self.grades.append(grade)
+  def avg(self):
+    return sum(self.grades)/len(self.grades)
+  def display(self):
+    print("Name",self.name)
+    print("Age",self.age)
+    print("Grades",self.grades)
+    print("Average grades is",self.avg())
+s1=student("Riya",19,[50])
+print(s1.add(60))
+print(s1.add(80))
+print(s1.add(70))
+print(s1.avg())
+s1.display()
+
+#Implement a Python class called **`Employee`** with the following requirements:
+# The class should have attributes **`name`**, **`salary`**, and **`bonus_percentage`**.
+#The constructor should initialize the attributes **`name`**, **`salary`**, and **`bonus_percentage`**.
+# The class should have a method called **`calculate_bonus()`** that calculates and returns the bonus amount based on the salary and bonus percentage.
+# Implement a subclass called **`Manager`** which inherits from **`Employee`**. The **`Manager`** class should have an additional attribute **`department`**.
+# Override the **`calculate_bonus()`** method in the **`Manager`** class to include a bonus of 10% of the salary.
+# Create an instance of the **`Employee`** class and two instances of the **`Manager`** class with different attributes. Then, print out the bonus amount for each employee.
+  class employee:
+  def __init__(self,name,salary,bonus_percentage):
+    self.name=name
+    self.salary=salary
+    self.bonus_percentage=bonus_percentage
+  def calculate_bonus(self):
+    return self.salary*(self.bonus_percentage/100)
+class manager(employee):
+  def __init__(self,name,salary,bonus_percentage,department):
+    super().__init__(name,salary,bonus_percentage)
+    self.department=department
+  def calculate_bonus(self):
+    base_bonus = super().calculate_bonus()
+    return base_bonus + (self.salary * 0.1)
+emp1=employee("Riya",1200000,7)
+mang=manager("Rahul",49000,5,"finance")
+emp1.calculate_bonus()
+mang.calculate_bonus()
+
