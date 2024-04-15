@@ -1,0 +1,41 @@
+#Create a Python class called **`Circle`** with the following requirements: 
+#The class should have an attribute **`radius`**.
+#Implement a getter method called **`get_radius()`** to retrieve the value of the radius.
+#Implement a setter method called **`set_radius()`** to set the value of the radius. Ensure that the radius cannot be negative.
+#Implement a method called **`calculate_area()`** that calculates and returns the area of the circle.
+import math
+class circle:
+  def __init__(self,radius):
+    self.radius=radius
+  def get_radius(self):
+    return self.radius
+  def set_radius(self,radius):
+   if radius>=0:
+      self.radius=radius
+   else:
+      print("radius cannot be negative") 
+  def calculate_area(self):
+    return math.pi*self.radius**2
+obj=circle(2)
+print(obj.get_radius)
+obj.set_radius(5)
+print("calculated area of circle is",obj.calculate_area())
+
+
+# Define a Python class called **`Car`** with the following requirements:
+# The class should have attributes **`make`**, **`model`**, and **`year`*
+#Implement a method called **`display_info()`** that prints out the car's information.
+class car:
+  def __init__(self,make,model,year):
+    self.make=make
+    self.model=model
+    self.year=year
+  def display_info(self):
+    print(f"car is made by {self.make} ")
+    print(f"model of the car is {self.model}")
+    print(f"the car made in the {self.year}")
+car=car("karl Benz","mercedes-342",1983)
+car.display_info()
+
+
+    ```
