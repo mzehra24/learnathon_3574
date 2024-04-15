@@ -1,0 +1,45 @@
+#Create a Python class called Animal with a method speak() that prints out "Animal speaks". Then, create a subclass called Dog that inherits from Animal and overrides the speak() method to print out "Dog barks".
+class Animal:
+  def speak(self):
+    print("Animal speaks")
+class Dog(Animal):
+  def speak(self):
+    print("Dog barks!")
+animal=Animal()
+animal.speak()
+dog=Dog()
+dog.speak()
+
+#Define two parent classes Vehicle and Passenger with methods drive() and carry_passengers() respectively. Then, create a child class called Car that inherits from both Vehicle and Passenger, implementing a method drive_and_carry() that calls both parent methods.
+class vehicle:
+  def drive(self):
+    print("drive method from 1st parent class")
+class passenger:
+  def carry_passengers(self):
+    print("carry passenger method from 2nd parent class")
+class child(vehicle,passenger):
+  def drive_and_carry(self):
+    print("drive and carry method from child class")
+vehicle=vehicle()
+vehicle.drive()
+passenger=passenger()
+passenger.carry_passengers()
+child=child()
+child.drive_and_carry()
+
+#Define a parent class Shape with a method draw() that prints out "Shape is being drawn". Then, create two child classes Rectangle and Circle that inherit from Shape, each overriding the draw() method to print out "Rectangle is being drawn" and "Circle is being drawn" respectively.
+class shape:
+  def draw(self):
+    print("shape is being drawn")
+class rectangle(shape):
+  def draw(self):
+    print("Rectangle is being drawn")
+class circle(shape):
+  def draw(self):
+    print("circle is being drawn")
+shape=shape()
+shape.draw()
+rectangle=rectangle()
+rectangle.draw()
+circle=circle()
+circle.draw()
