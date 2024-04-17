@@ -1,0 +1,94 @@
+#Create a Python program that models a university system. Define a base class Person with attributes name and age, and a method display_info() to print out the person's information. Create two subclasses Student and Professor inheriting from Person, each with additional attributes and methods specific to their roles. Finally, create instances of Student and Professor and demonstrate polymorphism by calling the display_info() method on each object.
+class person:
+  def __init__(self,name,age):
+    self.name=name
+    self.age=age
+  def display_info(self):
+    print(f"person's name is {self.name}")
+    print(f"person's age is {self.age}")
+class student(person):
+  def __init__(self,name,age,department,rollno):
+    self.department=department
+    self.rollno=rollno
+    super().__init__(name,age)
+  def display_info(self):
+    print(f"name of the student is {self.name}")
+    print(f"age of the student is {self.age}")
+    print(f"student is in {self.department}")
+    print(f"roll no of the student is {self.rollno}")
+class professor(person):
+  def __init__(self,name,age,subject,year):
+    self.subject=subject
+    self.year=year
+    super().__init__(name,age)
+  def display_info(self):
+    print(f"name of the professor is {self.name}")
+    print(f"age of the professor is {self.age}")
+    print(f"subject which the proffessor teaches is {self.subject}")
+    print(f"the academic year of the proffessor is {self.year}")
+person=person("Kelly",24)
+person.display_info()
+student=student("Rihana",18,"CSM",77)
+student.display_info()
+professor=professor("Rahul",30,"Java",2024)
+professor.display_info()
+
+#Develop a Python class BankAccount to simulate a simple bank account system. Implement a constructor to initialize the account holder's name and balance. Create methods to deposit and withdraw money from the account. Use a decorator to log each transaction, displaying the account holder's name, transaction type, and the updated balance after the transaction.
+def log_transaction(func):
+    def wrapper(self, amount):
+        transaction_type = func.__name__  # Get the transaction type from the method name
+        if transaction_type == 'deposit':
+            print(f"Transaction: {transaction_type.capitalize()} of rupees{amount} for account holder {self.name}")
+            self.balance += amount
+        elif transaction_type == 'withdraw':
+            if amount <= self.balance:
+                print(f"Transaction: {transaction_type.capitalize()} of rupees{amount} for account holder {self.name}")
+                self.balance -= amount
+            else:
+                print("Insufficient funds!")
+        else:
+            print("Invalid transaction type!")
+       print(f"Updated balance for {self.name}: rupees{self.balance}")
+    return wrapper
+class BankAccount:
+    def __init__(self, name, balance=0):
+        self.name = name
+        self.balance = balance
+    @log_transaction
+    def deposit(self, amount):
+        pass  
+    @log_transaction
+    def withdraw(self, amount):
+        pass  
+account1 = BankAccount("John", 1000)
+account1.deposit(500)
+account1.withdraw(200)
+account1.withdraw(1500)
+
+#Build a Python program for managing a library system. Define a base class LibraryItem with attributes title, author, and checked_out. Create subclasses Book and DVD inheriting from LibraryItem, each with additional attributes and methods as needed. Implement methods for checking out and returning library items. Use instances of Book and DVD to demonstrate inheritance and polymorphism, allowing users to interact with the library system.
+class book(libraryitem):
+    def __init__(self, title, author, checked_out, publishing_year, price):
+        super().__init__(title, author, checked_out)
+        self.publishing_year = publishing_year
+        self.price = price
+    def display_info(self):
+        print(f"Title of the book is {self.title}")
+        print(f"Author of the book is {self.author}")
+        print(f"Book checkout: {self.checked_out}")
+        print(f"Publishing year of the book is {self.publishing_year}")
+        print(f"Price of the book is {self.price}")
+class DVD(libraryitem):
+    def __init__(self, title, author, checked_out, publishing_year, price):
+        super().__init__(title, author, checked_out)
+        self.publishing_year = publishing_year
+        self.price = price
+    def display_info(self):
+        print(f"Title of the DVD is {self.title}")
+        print(f"Author of the DVD is {self.author}")
+        print(f"DVD checkout: {self.checked_out}")
+        print(f"Publishing year of the DVD is {self.publishing_year}")
+        print(f"Price of the DVD is {self.price}")
+book_item = book("Jungle Book", "Rudyard Kipling", 30, 1987, 480)
+book_item.display_info()
+dvd_item = DVD("Money Heist", "Álex Pina", 100, 2018, 789)
+dvd_item.display_info()
