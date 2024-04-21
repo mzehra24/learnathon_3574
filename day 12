@@ -1,0 +1,16 @@
+1) What are the main pillars of Object-Oriented Programming (OOP)?
+- Solution
+    1. **Encapsulation:** Encapsulation refers to the bundling of data (attributes) and methods (functions) that operate on the data within a class. It hides the internal state of an object from the outside world, allowing access only through well-defined interfaces. Encapsulation ensures data integrity, promotes modularity, and enhances code maintainability.
+    2. **Inheritance:** Inheritance allows a new class (subclass or derived class) to inherit properties and behaviors (attributes and methods) from an existing class (superclass or base class). This promotes code reuse and establishes a hierarchical relationship among classes. Subclasses can extend the functionality of their superclass while inheriting its common characteristics, facilitating modular design and reducing redundancy in code.
+    3. **Polymorphism:** Polymorphism, meaning "many forms," enables objects of different classes to be treated as objects of a common superclass. It allows a single interface to represent different underlying forms, promoting code flexibility and extensibility. Polymorphism is achieved through method overriding, where subclasses provide their own implementation of a method defined in their superclass, and method overloading, where multiple methods with the same name but different parameters can exist within a class. Polymorphism enhances code readability, maintainability, and scalability by promoting abstraction and reducing dependency on specific implementations.
+
+2) What is the significance of abstraction in Object-Oriented Programming?
+- Solution
+    
+     Abstraction in OOP allows developers to focus on essential aspects of an object while hiding unnecessary details. It simplifies complex systems by defining a clear interface for interaction, promoting modularity and code reusability. Through abstraction, programmers can create efficient and scalable solutions without being burdened by implementation complexities.
+    
+
+3) What are static methods in Object-Oriented Programming and how do they differ from instance methods?
+- Solution
+    
+    1. Static methods in OOP are associated with a class rather than an instance of that class. They can be invoked without creating an object of the class and are commonly used for utility functions or operations that do not depend on specific object state. Unlike instance methods, which require an object to be instantiated, static methods operate independently of object instances and can be accessed directly through the class itself.
