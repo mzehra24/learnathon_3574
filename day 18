@@ -1,0 +1,32 @@
+#Define a Python class BankAccount with private attributes __balance and __account_number. Implement public methods get_balance() and deposit(amount) to retrieve the balance and deposit money into the account respectively. Ensure that the __balance attribute cannot be accessed directly from outside the class.
+class Bankaccount:
+  def __init__(self,_balance,_account_number):
+    self._balance= _balance
+    self._account_number=_account_number
+
+  def get_balance(self):
+    return self._balance
+  def deposit(self,amount):
+    self.amount=amount
+    if self._balance>amount:
+      print("deposition completed successfully")
+      print(f"Net balance:{self._balance}")
+    else:
+      print("insufficient balance!")
+obj=Bankaccount(2300000,782393)
+obj.get_balance()
+obj.deposit(35000)
+
+#Create a Python class Point to represent a point in 2D space with attributes x and y. Implement the __add__() method to allow adding two Point objects together, where addition is performed element-wise (i.e., adding the x values together and the y values together). Then, demonstrate the use of the overloaded + operator by adding two Point objects.
+class point:
+  def __init__(self,x,y):
+    self.x=x
+    self.y=y
+  def __add__(self,other):
+    return point(self.x+other.x,self.y+other.y)
+p1=point(4,5)
+p2=point(2,3)
+res=p1+p2
+print(res.x,res.y)
+  
+  
