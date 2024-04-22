@@ -1,0 +1,12 @@
+#implement a Python decorator called cache that caches the results of a function to improve performance. The decorator should store the results of function calls in a dictionary and return the cached result if the same input arguments are provided again.
+from functools import lru_cache
+import time
+@lru_cache(maxsize=None)
+def cache(n):
+  dic={}
+  time.sleep(3)
+  return n*3
+print(cache(4))
+print(cache(7))
+print(cache(4))
+print(cache(7))
