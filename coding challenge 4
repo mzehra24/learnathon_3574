@@ -1,0 +1,177 @@
+>#Create a Python class called **`Calculator`** with a private attribute **`__result`**. Implement methods to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. Ensure that these methods modify the private attribute **`__result`** accordingly. Additionally, implement a method called **`get_result()`** to retrieve the value of **`__result`**.
+
+
+>     class Calculator:
+>         def __init__(self):
+>             self.__result = 0
+>     
+>         def add(self, num):
+>             self.__result += num
+>     
+>         def subtract(self, num):
+>             self.__result -= num
+>     
+>         def multiply(self, num):
+>             self.__result *= num
+>     
+>         def divide(self, num):
+>             if num != 0:
+>                 self.__result /= num
+>             else:
+>                 print("Cannot divide by zero")
+   
+         def get_result(self):
+>             return self.__result
+>     calc = Calculator()
+>     calc.add(5)
+>     calc.multiply(3)
+>     calc.subtract(2)
+>     calc.divide(2)
+>     print("Result:", calc.get_result())
+
+
+# Develop a Python module called **`currency_converter`** that provides functions for converting currencies. Implement functions to convert from USD to EUR, EUR to GBP, and GBP to USD. Then, create a Python script **`main.py`** that imports the **`currency_converter`** module and demonstrates the usage of each conversion function.
+
+>     currency_converter.py file
+>     # currency_converter.py
+>     def usd_to_eur(amount):
+>         return amount * 0.82
+>     
+>     def eur_to_gbp(amount):
+>         return amount * 0.90
+>     
+>     def gbp_to_usd(amount):
+>         return amount * 1.37
+>     
+>     main.py file
+>     # main.py
+>     import currency_converter as cc
+>     
+>     amount_usd = 100
+>     amount_eur = cc.usd_to_eur(amount_usd)
+>     amount_gbp = cc.eur_to_gbp(amount_eur)
+>     amount_usd_back = cc.gbp_to_usd(amount_gbp)
+>     
+>     print(f"${amount_usd} USD is equivalent to {amount_eur} EUR")
+>     print(f"{amount_eur} EUR is equivalent to {amount_gbp} GBP")
+>     print(f"{amount_gbp} GBP is equivalent to ${amount_usd_back} USD")
+>  
+#> mplement a Python decorator called **`cache`** that caches the results of a function to improve performance. The decorator should store the results of function calls in a dictionary and return the cached result if the same input arguments are provided again.
+
+>     def cache(func):
+>         cached_results = {}
+>     
+>         def wrapper(*args):
+>             if args not in cached_results:
+>                 cached_results[args] = func(*args)
+>             return cached_results[args]
+>     
+>         return wrapper
+>     
+>     # Example usage:
+>     @cache
+>     def fibonacci(n):
+>         if n <= 1:
+>             return n
+>         else:
+>             return fibonacci(n-1) + fibonacci(n-2)
+>     
+>     print(fibonacci(10))  
+>     print(fibonacci(10)) 
+>     
+>     ```
+#Create a Python class **`Shape`** with a method **`draw()`** that prints "Drawing generic shape". Then, create two subclasses **`Rectangle`** and **`Circle`** that inherit from **`Shape`**. Override the **`draw()`** method in each subclass to print "Drawing rectangle" and "Drawing circle" respectively. Finally, create instances of both **`Rectangle`** and **`Circle`** classes and call the **`draw()`** method on each.
+    class Shape:
+        def draw(self):
+            print("Drawing generic shape")
+    
+    class Rectangle(Shape):
+        def draw(self):
+            print("Drawing rectangle")
+    
+    class Circle(Shape):
+        def draw(self):
+            print("Drawing circle")
+    
+    # Example usage:
+    rectangle = Rectangle()
+    circle = Circle()
+    
+    rectangle.draw()  
+    circle.draw()     
+
+#> You are tasked with building a Python application to manage student records. Create a module named **`student_manager`** containing a class **`Student`** with private attributes **`__name`** and **`__age`**. Implement methods to set and get the student's name and age. Additionally, implement a method called **`display_info()`** to display the student's information.
+To improve performance, implement a function caching mechanism for the **`display_info()`** method using the **`cache`** decorator. Ensure that the cached results are stored based on the student's name and age. Finally, create a subclass **`HighSchoolStudent`** inheriting from **`Student`**. Override the **`display_info()`** method in the **`HighSchoolStudent`** class to include additional information such as grade level.
+# student_manager.py
+
+from functools import wraps
+
+def cache(func):
+    cached_results = {}
+    
+    @wraps(func)
+    def wrapper(*args):
+        key = tuple(args)
+        if key not in cached_results:
+            cached_results[key] = func(*args)
+        return cached_results[key]
+    
+    return wrapper
+
+class Student:
+    def __init__(self):
+        self.__name = None
+        self.__age = None
+    
+    def set_name(self, name):
+        self.__name = name
+    
+    def set_age(self, age):
+        self.__age = age
+    
+    def get_name(self):
+        return self.__name
+    
+    def get_age(self):
+        return self.__age
+    
+    @cache
+    def display_info(self):
+        return f"Name: {self.__name}, Age: {self.__age}"
+
+class HighSchoolStudent(Student):
+    def __init__(self):
+        super().__init__()
+        self.grade_level = None
+    
+    def set_grade_level(self, grade_level):
+        self.grade_level = grade_level
+    
+    def display_info(self):
+        base_info = super().display_info()
+        return f"{base_info}, Gr
+
+#Write a Python script **`main.py`** that imports the **`student_manager`** module and demonstrates the usage of both the **`Student`** and **`HighSchoolStudent`** classes.
+# main.py
+
+from student_manager import Student, HighSchoolStudent
+
+# Creating a regular student
+regular_student = Student()
+regular_student.set_name("John Doe")
+regular_student.set_age(18)
+
+print("Regular Student Info:")
+print(regular_student.display_info())
+
+# Creating a high school student
+high_school_student = HighSchoolStudent()
+high_school_student.set_name("Jane Smith")
+high_school_student.set_age(17)
+high_school_student.set_grade_level(12)
+
+print("\nHigh School Student Info:")
+print(high_school_student.display_info())
+
+
+    ```
