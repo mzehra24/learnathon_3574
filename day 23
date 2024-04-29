@@ -1,0 +1,16 @@
+1)  What is the purpose of studying Data Structures and Algorithms?
+
+- Solution
+    
+    Data Structures and Algorithms (DSA) are fundamental concepts in computer science that enable efficient data organization and manipulation. The purpose of studying DSA is to:
+    
+    - Understand how to represent and store data in a structured manner.
+    - Learn algorithms to perform various operations on data efficiently.
+    - Analyze the time and space complexity of algorithms to understand their performance.
+    - Solve real-world problems by selecting appropriate data structures and algorithms.
+
+2) Differentiate between data structure and algorithm.?
+> 
+- Solution
+    - **Data Structure**: A data structure is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently. It defines the relationship between data elements, their organization, and the operations that can be performed on them. Examples of data structures include arrays, linked lists, stacks, queues, trees, graphs, etc.
+    - **Algorithm**: An algorithm is a step-by-step procedure or set of rules for solving a problem or accomplishing a task. It describes the sequence of operations to be performed to achieve a particular goal. Algorithms operate on data structures and manipulate the data stored in them to produce a desired outcome. Examples of algorithms include searching, sorting, traversal, and various problem-solving techniques like dynamic programming and greedy algorithms.
