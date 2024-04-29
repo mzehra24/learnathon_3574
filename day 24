@@ -1,0 +1,25 @@
+#Write a Python function to remove duplicate elements from a given list and return the unique elements in sorted order.
+a=[1,2,3,3,4,6,6]
+a.pop(2)
+print("Removing a repeted element at index 2")
+print(a)
+a.pop(5)
+print("Removing a repeted element at index 5")
+print(a)
+
+#Create a Python program that counts the frequency of words in a given string and stores them in a dictionary.
+def count_word_frequency(input_string):
+    words = input_string.split()
+    frequency_dict = {}
+    for word in words:
+        if word in frequency_dict:
+            frequency_dict[word] += 1
+        else:
+            frequency_dict[word] = 1
+    return frequency_dict
+
+# Example usage:
+input_string = "hello world hello python world"
+frequency_dict = count_word_frequency(input_string)
+print("Word frequency:", frequency_dict)
+
