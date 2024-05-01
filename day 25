@@ -1,0 +1,35 @@
+#> represent a stack data structure. The class should have the following methods:
+> 
+- **`push(item)`**: Add an item to the top of the stack.
+- **`pop()`**: Remove and return the item at the top of the stack.
+- **`peek()`**: Return the item at the top of the stack without removing it.
+- **`is_empty()`**: Return True if the stack is empty, False otherwise.
+- **`size()`**: Return the number of items in the stack.
+class stack:
+  def __init__(self):
+    self.items=[]
+  def push(self,item):
+    self.items.append(item)
+  def pop(self):
+    if not self.is_empty():
+      print("Empty list")
+  def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+
+  def is_empty(self):
+        return len(self.items) == 0
+
+  def size(self):
+        return len(self.items)
+stack = stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+print("Stack size:", stack.size())   
+print("Top element:", stack.peek())  
+item = stack.pop()
+print("Popped item:", item)          
+
+print("Is the stack empty?", stack.is_empty()) 
