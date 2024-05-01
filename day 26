@@ -1,0 +1,36 @@
+#>Implement a Python class called **`Queue`** to represent a queue data structure. The class should have the following methods:
+**`enqueue(item)`**: Add an item to the rear of the queue.
+**`dequeue()`**: Remove and return the item at the front of the queue.
+**`peek()`**: Return the item at the front of the queue without removing it.
+**`is_empty()`**: Return True if the queue is empty, False otherwise.
+**`size()`**: Return the number of items in the queue. 
+ You can choose to implement the queue using a list or linked list.
+
+class queue:
+  def __init__(self):
+    self.items=[]
+  def enqueue(self,item):
+    return self.items.append(item)
+  def dequeue(self):
+    if not self.is_empty():
+      self.items.pop(0)
+    else:
+      print("empty queue")
+  def peek(self):
+    if not self.is_empty():
+      self.items[0]
+  def is_empty(self):
+    return len(self.items)==0
+  def size(self):
+    return len(self.items)
+queue=queue()
+queue.enqueue(45)
+queue.enqueue(67)
+queue.enqueue(56)
+print("queue size is",queue.size())
+print("Elements in queue is",queue.peek())
+item=queue.dequeue()
+print("Dequeued item:", item)         
+print("Is the queue empty?", queue.is_empty()) 
+
+
