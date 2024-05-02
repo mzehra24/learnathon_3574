@@ -1,0 +1,73 @@
+#implement a Python class called **`Node`** to represent a node in a linked list. Each node should have two attributes: **`data`** to store the value of the node and **`next`** to store a reference to the next node in the list.
+
+Then, implement a Python class called **`LinkedList`** to represent a singly linked list. The class should have the following methods:
+
+- **`__init__()`**: Initialize an empty linked list.
+- **`is_empty()`**: Return True if the linked list is empty, False otherwise.
+- **`insert(data)`**: Insert a new node with the given data at the beginning of the list.
+- **`append(data)`**: Insert a new node with the given data at the end of the list.
+- **`delete(data)`**: Delete the first occurrence of a node with the given data from the list.
+- **`display()`**: Display the elements of the linked list.
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def is_empty(self):
+        return self.head is None
+
+    def insert(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        last_node = self.head
+        while last_node.next:
+            last_node = last_node.next
+        last_node.next = new_node
+
+    def delete(self, data):
+        if self.head is None:
+            return
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+        prev_node = self.head
+        current_node = self.head.next
+        while current_node:
+            if current_node.data == data:
+                prev_node.next = current_node.next
+                return
+            prev_node = current_node
+            current_node = current_node.next
+
+    def display(self):
+        current_node = self.head
+        while current_node:
+            print(current_node.data, end=" ")
+            current_node = current_node.next
+        print()
+linked_list = LinkedList()
+print("Is the linked list empty?", linked_list.is_empty())  # Output: True
+
+linked_list.insert(1)
+linked_list.insert(2)
+linked_list.insert(3)
+linked_list.display()  # Output: 3 2 1
+
+linked_list.append(4)
+linked_list.append(5)
+linked_list.display()  # Output: 3 2 1 4 5
+
+linked_list.delete(3)
+linked_list.delete(5)
+linked_list.display()  # Output: 2 1 4
